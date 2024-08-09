@@ -12,7 +12,7 @@ class StudentController extends Controller
     public function index()
     {
         //Fetch all student details that are not deleted
-        $students = Student::whereNull('deleted_at')->paginate(2);
+        $students = Student::whereNull('deleted_at')->paginate(6); // paginate (limit of record per page)
 
         return view('student.index', compact('students')); // students is a array that was fetch
     }   
@@ -54,7 +54,7 @@ class StudentController extends Controller
     {
         //Check if the teacher has created this student
         if (Auth::user()->id !== $student->user_id) {
-            return response()->json(['message' => 'Permission Denied'], 403);
+            return response()->json(['message' => 'Permission Denied']);
         }
 
         // validate the request data
@@ -73,6 +73,11 @@ class StudentController extends Controller
 
     public function destroy(Student $student)
     {
+        //Check if the teacher has created this student
+        if (Auth::user()->id !== $student->user_id) {
+            return response()->json(['message' => 'Permission Denied'], 403);
+        }
+
         // SoftDelete the student record
         $student->delete();
 
