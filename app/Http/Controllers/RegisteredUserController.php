@@ -12,7 +12,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         // Return to user registration form
-        return view('auth.register');
+        return view('Auth.register');
     }
 
     public function store()
