@@ -78,6 +78,7 @@ Clone or download this project to the local system with the above configuration.
 Run the following commands:
 - change .env.example to .env (inside this page setup the DB configuration as in DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 - composer install
+- php artisan key:generate
 - php artisan migrate
 - php artisan serve
 
