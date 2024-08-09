@@ -76,7 +76,23 @@ Requirement to run this project
 Clone or Download this project to the local System with the above configaration
 
 Run the following commands
+- change .env.example to .env (inside this page setup the DB configuration as in DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 - composer install
+- php artisan migrate
+- php artisan serve
+
+This will start the server and run on http://127.0.0.1:8000
+
+Features,
+
+- Create User
+- Login User
+- Logout User
+- Add New Student Mark (New student will be created with the currect user id for update and delete permission)
+- Edit and Delete Student (Only the user that created the student can edit or delete the student)
+- after 6 record added, pagination will start
+- When creating a record, if existing name and suject is given then the mark for the existing student will be update rather then creating
+ 
 
 
 
