@@ -67,15 +67,15 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Installation Guide
 
-Requirement to run this project
+Requirement to run this project:
 - PHP > 8,
 - Laravel > 11,
 - Composer lastest version
-- zip/unzip software (Preferable 7zip)
+- zip/unzip software (Preferably 7zip)
 
-Clone or Download this project to the local System with the above configaration
+Clone or download this project to the local system with the above configuration.
 
-Run the following commands
+Run the following commands:
 - change .env.example to .env (inside this page setup the DB configuration as in DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 - composer install
 - php artisan migrate
@@ -83,15 +83,15 @@ Run the following commands
 
 This will start the server and run on http://127.0.0.1:8000
 
-Features,
+Features:
 
 - Create User
 - Login User
 - Logout User
-- Add New Student Mark (New student will be created with the currect user id for update and delete permission)
-- Edit and Delete Student (Only the user that created the student can edit or delete the student)
-- after 6 record added, pagination will start
-- When creating a record, if existing name and suject is given then the mark for the existing student will be update rather then creating
+- Add New Student Mark (A new student will be created with the current user ID for update and delete permissions)
+- Edit and Delete Student (Only the user who created the student can edit or delete the student)
+- After 6 records are added, pagination will start
+- When creating a record, if an existing name and subject are given, the mark for the existing student will be updated rather than creating a new record
  
 
 
