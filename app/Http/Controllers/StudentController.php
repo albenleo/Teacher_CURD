@@ -19,12 +19,23 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        // validate the request data
+        // Validate the request data
         $request->validate([
             'name' => 'required|string|max:255',
             'subject' => 'required|string|max:255',
             'mark' => 'required|integer|min:0',
         ]);
+
+        // Check if the student with the same name, subject, and mark already exists
+        $existingStudent = Student::where('name', $request->name)
+            ->where('subject', $request->subject)
+            ->where('mark', $request->mark)
+            ->first();
+
+        if ($existingStudent) {
+            // If the student with the same name, subject, and mark exists, return a message
+            return response()->json(['message' => 'Record already exists'], 409);
+        }
 
         // Check if the student with the same name and subject already exists
         $student = Student::where('name', $request->name)
@@ -41,14 +52,13 @@ class StudentController extends Controller
                 'name' => $request->name,
                 'subject' => $request->subject,
                 'mark' => $request->mark,
-                'user_id' => Auth::User()->id
+                'user_id' => Auth::user()->id,
             ]);
         }
 
-        // Redirect to the dashboard
+        // Return a success message
         return response()->json(['message' => 'Student data saved successfully']);
-}
-
+    }
 
     public function update(Request $request, Student $student)
     {
