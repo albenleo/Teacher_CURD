@@ -76,7 +76,7 @@ Requirement to run this project
 Clone or Download this project to the local System with the above configaration
 
 Run the following commands
-composer install
+- composer install
 
 
 
