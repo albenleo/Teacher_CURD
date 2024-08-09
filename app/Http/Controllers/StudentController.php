@@ -14,7 +14,7 @@ class StudentController extends Controller
         //Fetch all student details that are not deleted
         $students = Student::whereNull('deleted_at')->paginate(6); // paginate (limit of record per page)
 
-        return view('student.index', compact('students')); // students is a array that was fetch
+        return view('Student.index', compact('students')); // students is a array that was fetch
     }   
 
     public function store(Request $request)
