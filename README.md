@@ -68,10 +68,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Installation Guide
 
 Requirement to run this project
--PHP > 8,
--Laravel > 11,
--Composer lastest version
--zip/unzip software (Preferable 7zip)
+- PHP > 8,
+- Laravel > 11,
+- Composer lastest version
+- zip/unzip software (Preferable 7zip)
 
 Clone or Download this project to the local System with the above configaration
 
